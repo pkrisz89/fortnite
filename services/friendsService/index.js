@@ -27,9 +27,7 @@ class FriendsService {
       method: "delete",
       url,
       headers: { Authorization: this.token }
-    })
-      .then(this.getFriends)
-      .then(res => res.data);
+    });
   }
 
   getFriends() {
