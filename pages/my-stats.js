@@ -21,6 +21,7 @@ class MyStats extends React.Component {
       this.props.url.replace("/");
     }
   }
+
   render() {
     return (
       <React.Fragment>

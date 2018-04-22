@@ -20,7 +20,7 @@ class Login extends React.Component {
 
   componentDidMount() {
     if (AuthenticationService.isAuthenticated()) {
-      this.props.url.replace("/");
+      Router.replace("/");
     }
   }
 
