@@ -1,9 +1,13 @@
 import axios from "axios";
+import axiosCookieJarSupport from "@3846masa/axios-cookiejar-support";
+import { CookieJar } from "tough-cookie";
 import AuthenticationService from "../authenticationService";
+
+axiosCookieJarSupport(axios);
+const cookieJar = new CookieJar();
 
 class FriendsService {
   constructor() {
-    this.token = AuthenticationService.getToken().token;
     this.baseUrl = "http://localhost:3001/";
     this.getFriends = this.getFriends.bind(this);
     this.addFriend = this.addFriend.bind(this);
@@ -13,32 +17,21 @@ class FriendsService {
   addFriend(data) {
     const url = `${this.baseUrl}friends`;
 
-    return axios({
-      method: "post",
-      url,
-      data,
-      headers: { Authorization: this.token }
-    });
+    return axios.post(url, data, { jar: cookieJar, withCredentials: true });
   }
 
   deleteFriend(id) {
     const url = `${this.baseUrl}friend/${id}`;
-    return axios({
-      method: "delete",
-      url,
-      headers: { Authorization: this.token }
-    });
+    return axios.delete(url, { jar: cookieJar, withCredentials: true });
   }
 
   getFriends() {
     const url = `${this.baseUrl}friends`;
-    return axios({
-      method: "get",
-      url,
-      headers: { Authorization: this.token }
-    }).then(res => {
-      return res.data;
-    });
+    return axios
+      .get(url, { jar: cookieJar, withCredentials: true })
+      .then(res => {
+        return res.data;
+      });
   }
 }
 

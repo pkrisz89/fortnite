@@ -1,4 +1,9 @@
 import axios from "axios";
+import axiosCookieJarSupport from "@3846masa/axios-cookiejar-support";
+import { CookieJar } from "tough-cookie";
+
+axiosCookieJarSupport(axios);
+const cookieJar = new CookieJar();
 
 class AuthenticationService {
   constructor() {
@@ -13,13 +18,13 @@ class AuthenticationService {
 
   authenticate(payload) {
     const uri = "http://localhost:3001/login";
-    return axios.post(uri, payload).then(res => {
-      this.setToken({
-        token: res.data.token,
-        expires: res.data.expiry,
-        userId: res.data.userId
+    return axios
+      .post(uri, payload, { jar: cookieJar, withCredentials: true })
+      .then((res, ...rest) => {
+        this.setToken({
+          userId: res.data.userId
+        });
       });
-    });
   }
 
   isAuthenticated() {
