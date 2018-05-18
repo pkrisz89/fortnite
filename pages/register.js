@@ -62,6 +62,8 @@ class Register extends React.Component {
         <Nav/>
 
         <div className="registration">
+          <span className="registration__header">Register</span>
+          <img className="registration__image" src='./static/images/woman.png' alt=""/>
           <div className="registration__fieldset">
             <label className="registration__label" htmlFor="username">
               Username

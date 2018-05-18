@@ -3,6 +3,14 @@ body {
   font-family: "Press Start 2P";
   color: #221f16;
   font-size: 16px;
+  background-color: #d59843;
+}
+
+.error {
+  box-shadow: 6px 0 red, -6px 0 red, 0 -6px red, 0 6px red;
+  padding: 0.5rem;
+  margin: 2rem 0;
+  background: white;
 }
 
 /*Nav*/
@@ -11,6 +19,7 @@ body {
   margin: 6px auto;
   max-width: 90%;
   padding: 1rem;
+  background-color: #bfd830;
 }
 
 .nav-list {
@@ -39,9 +48,11 @@ body {
 /*Registration page*/
 
 .registration {
+  position: relative;
   max-width: 800px;
   margin: 3rem auto;
-  padding: 2rem 1rem;
+  padding: 4rem 1rem;
+  background-color: #f57c43;
   box-shadow: 4px 0 white, -4px 0 white, 0 -4px white, 0 4px white,
     8px 0 #934b29, -8px 0 #934b29, 0 -8px #934b29, 0 8px #934b29,
     0 0 0 4px #934b29;
@@ -122,3 +133,22 @@ body {
   border-left: 6px black solid;
   border-right: 6px black solid;
 }
+
+.registration__image {
+  height: auto;
+  max-width: 200px;
+  float: right;
+}
+
+.registration__header {
+  position: absolute;
+  top: -30px;
+  padding: 1rem;
+  color: black;
+  background: white;
+  box-shadow: 4px 0 white, -4px 0 white, 0 -4px white, 0 4px white,
+    8px 0 #934b29, -8px 0 #934b29, 0 -8px #934b29, 0 8px #934b29,
+    0 0 0 4px #934b29;
+}
+
+/*Spacing*/

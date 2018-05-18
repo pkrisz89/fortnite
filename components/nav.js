@@ -4,27 +4,18 @@ import AuthenticationService from "../services/authenticationService";
 
 const noAuthRoutes = [
   {
-    id: "Home",
-    href: "/"
+    id: "Login",
+    href: "/login"
   }, {
     id: "Register",
     href: "/register"
-  }, {
-    id: "Login",
-    href: "/login"
   }
 ];
 
 const authRoutes = [
   {
-    id: "Home",
-    href: "/"
-  }, {
-    id: "My stats",
-    href: "/my-stats"
-  }, {
     id: "Compare stats",
-    href: "/compare"
+    href: "/"
   }, {
     id: "Logout",
     href: "/logout"

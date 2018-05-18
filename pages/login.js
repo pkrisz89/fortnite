@@ -62,17 +62,39 @@ class Login extends React.Component {
     return (
       <React.Fragment>
         <Nav/>
-        <h1>Login</h1>
-        <input type="text" name="email" value={email} onChange={this.handleChange}/>
-        <input
-          type="password"
-          name="password"
-          value={password}
-          onChange={this.handleChange}/>
-        <button onClick={this.login} disabled={!email || !password}>
-          Login
-        </button>
-        <Error show={error}>An error has occured</Error>
+        <div className="registration">
+          <h1 className="registration__header">Login</h1>
+          <img className="registration__image" src='./static/images/trap.png' alt=""/>
+          <div className="registration__fieldset">
+            <label className="registration__label" htmlFor="email">
+              Email
+            </label>
+            <input
+              className="registration__input"
+              type="text"
+              name="email"
+              value={email}
+              onChange={this.handleChange}/>
+          </div>
+          <div className="registration__fieldset">
+            <label className="registration__label" htmlFor="password">
+              Password
+            </label>
+            <input
+              type="password"
+              name="password"
+              className="registration__input"
+              value={password}
+              onChange={this.handleChange}/>
+          </div>
+          <button
+            className="registration__button"
+            onClick={this.login}
+            disabled={!email || !password}>
+            Login
+          </button>
+          <Error show={error}>An error has occurred</Error>
+        </div>
       </React.Fragment>
     );
   }
