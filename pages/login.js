@@ -1,15 +1,8 @@
 import Router from "next/router";
-import styled from 'styled-components';
 import Nav from "../components/nav";
 import Head from "../components/head";
 import Error from "../components/error";
 import AuthenticationService from "../services/authenticationService";
-
-const Circle = styled.div `
-  height: 100px;
-  width: 100px;
-  background-color: red;
-`;
 
 class Login extends React.Component {
   constructor(props) {
@@ -62,33 +55,33 @@ class Login extends React.Component {
     return (
       <React.Fragment>
         <Nav/>
-        <div className="registration">
-          <h1 className="registration__header">Login</h1>
-          <img className="registration__image" src='./static/images/trap.png' alt=""/>
-          <div className="registration__fieldset">
-            <label className="registration__label" htmlFor="email">
+        <div className="form__container">
+          <h1 className="form__header">Login</h1>
+          <img className="form__image" src='./static/images/trap.png' alt=""/>
+          <div className="form__fieldset">
+            <label className="form__label" htmlFor="email">
               Email
             </label>
             <input
-              className="registration__input"
+              className="form__input"
               type="text"
               name="email"
               value={email}
               onChange={this.handleChange}/>
           </div>
-          <div className="registration__fieldset">
-            <label className="registration__label" htmlFor="password">
+          <div className="form__fieldset">
+            <label className="form__label" htmlFor="password">
               Password
             </label>
             <input
               type="password"
               name="password"
-              className="registration__input"
+              className="form__input"
               value={password}
               onChange={this.handleChange}/>
           </div>
           <button
-            className="registration__button"
+            className="form__button"
             onClick={this.login}
             disabled={!email || !password}>
             Login

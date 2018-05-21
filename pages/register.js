@@ -61,48 +61,48 @@ class Register extends React.Component {
       <React.Fragment>
         <Nav/>
 
-        <div className="registration">
-          <span className="registration__header">Register</span>
-          <img className="registration__image" src='./static/images/woman.png' alt=""/>
-          <div className="registration__fieldset">
-            <label className="registration__label" htmlFor="username">
+        <div className="form__container">
+          <span className="form__header">Register</span>
+          <img className="form__image" src='./static/images/woman.png' alt=""/>
+          <div className="form__fieldset">
+            <label className="form__label" htmlFor="username">
               Username
             </label>
             <input
-              className="registration__input"
+              className="form__input"
               type="text"
               name="username"
               value={username}
               onChange={this.handleChange}/>
           </div>
-          <div className="registration__fieldset">
-            <label className="registration__label" htmlFor="email">
+          <div className="form__fieldset">
+            <label className="form__label" htmlFor="email">
               Email
             </label>
             <input
-              className="registration__input"
+              className="form__input"
               type="text"
               name="email"
               value={email}
               onChange={this.handleChange}/>
           </div>
-          <div className="registration__fieldset">
-            <label className="registration__label" htmlFor="password">
+          <div className="form__fieldset">
+            <label className="form__label" htmlFor="password">
               Password
             </label>
             <input
-              className="registration__input"
+              className="form__input"
               type="password"
               name="password"
               value={password}
               onChange={this.handleChange}/>
           </div>
-          <div className="registration__fieldset">
-            <label className="registration__label" htmlFor="platform">
+          <div className="form__fieldset">
+            <label className="form__label" htmlFor="platform">
               Platform
             </label>
             <select
-              className="registration__input"
+              className="form__input"
               value={platform}
               name="platform"
               onChange={this.handleChange}>
@@ -112,7 +112,7 @@ class Register extends React.Component {
             </select>
           </div>
           <button
-            className="registration__button"
+            className="form__button"
             onClick={this.registerUser}
             disabled={!username || !email || !password}>Register</button>
           <Error show={error}>An error has occured</Error>

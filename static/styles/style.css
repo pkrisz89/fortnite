@@ -45,9 +45,9 @@ body {
   color: #934b29;
 }
 
-/*Registration page*/
+/*Form elements*/
 
-.registration {
+.form__container {
   position: relative;
   max-width: 800px;
   margin: 3rem auto;
@@ -58,17 +58,17 @@ body {
     0 0 0 4px #934b29;
 }
 
-.registration__fieldset {
+.form__fieldset {
   display: flex;
   margin-bottom: 2rem;
 }
 
-.registration__label {
+.form__label {
   flex: 0 0 200px;
   font-size: 120%;
 }
 
-.registration__input {
+.form__input {
   box-shadow: 3px 0 white, -3px 0 white, 0 -3px white, 0 3px white, 6px 0 white,
     -6px 0 white, 0 -6px white, 0 6px white, 0 0 0 3px white, 9px 0 #819221,
     -9px 0 #819221, 0 9px #819221, 0 -9px #819221, 0 -3px 0 3px #819221,
@@ -77,11 +77,11 @@ body {
   padding: 0px 5px;
 }
 
-.registration__input:focus {
+.form__input:focus {
   outline: 0;
 }
 
-.registration__button {
+.form__button {
   background: #92cd41;
   display: inline-block;
   position: relative;
@@ -94,53 +94,81 @@ body {
   font-family: "Press Start 2P";
 }
 
-.registration__button[disabled] {
+.form__button[disabled] {
   box-shadow: inset -6px -6px 0px 0px gray;
   background-color: gray;
   cursor: not-allowed;
 }
 
-.registration__button[disabled]:hover {
+.form__button[disabled]:hover {
   box-shadow: inset -6px -6px 0px 0px gray;
   background-color: gray;
 }
 
-.registration__button:hover,
-.registration__button:focus {
+.form__button:hover,
+.form__button:focus {
   background: #76c442;
   box-shadow: inset -6px -6px 0px 0px #4aa52e;
 }
-.registration__button:active {
+.form__button:active {
   box-shadow: inset 4px 4px 0px 0px #4aa52e;
 }
-.registration__button:before,
-.registration__button:after {
+.form__button:before,
+.form__button:after {
   content: "";
   position: absolute;
   width: 100%;
   height: 100%;
   box-sizing: content-box;
 }
-.registration__button:before {
+.form__button:before {
   top: -6px;
   left: 0;
   border-top: 6px black solid;
   border-bottom: 6px black solid;
 }
-.registration__button:after {
+.form__button:after {
   left: -6px;
   top: 0;
   border-left: 6px black solid;
   border-right: 6px black solid;
 }
 
-.registration__image {
+.form__button--small {
+  padding: 5px;
+  font-size: 0.5rem;
+}
+
+.form__button--small:before {
+  top: -3px;
+  left: 0;
+  border-top: 3px black solid;
+  border-bottom: 3px black solid;
+}
+.form__button--small:after {
+  left: -3px;
+  top: 0;
+  border-left: 3px black solid;
+  border-right: 3px black solid;
+}
+
+.form__button--red {
+  background: #cc0000;
+  box-shadow: inset -4px -4px 0px 0px red;
+}
+
+.form__button--red:hover {
+  background: red;
+  box-shadow: inset -6px -6px 0px 0px red;
+}
+
+.form__image {
   height: auto;
-  max-width: 200px;
+  max-width: 250px;
   float: right;
 }
 
-.registration__header {
+.form__header {
   position: absolute;
   top: -30px;
   padding: 1rem;
@@ -152,3 +180,50 @@ body {
 }
 
 /*Spacing*/
+.mr-1 {
+  margin-right: 10px;
+}
+
+.ml-2 {
+  margin-left: 20px;
+}
+
+.mt-2 {
+  margin-top: 20px;
+}
+
+.mb-2 {
+  margin-bottom: 20px;
+}
+
+/*Friends*/
+.friends-list__item {
+  margin: 10px 0px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.friends-list__name {
+  flex: 0 0 200px;
+}
+
+/*Loader*/
+.loader-text {
+  display: flex;
+  height: 98vh;
+  width: 98vw;
+  justify-content: center;
+  align-items: center;
+  color: red;
+  font-size: 5rem;
+  margin: 10px 0 0 10px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/*stats*/
+
+.stats__container {
+  display: flex;
+  justify-content: space-around;
+}
