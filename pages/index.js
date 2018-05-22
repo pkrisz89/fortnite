@@ -38,6 +38,9 @@ class Compare extends React.Component {
     this.selectFriend = this
       .selectFriend
       .bind(this);
+    this.close = this
+      .close
+      .bind(this)
   }
 
   componentWillMount() {
@@ -93,6 +96,10 @@ class Compare extends React.Component {
     });
   }
 
+  close() {
+    this.setState({view: 'friends'})
+  }
+
   render() {
     const {username, platform, friends, stats, friendStats} = this.state;
     const showFriendsList = this.state.view === 'friends';
@@ -110,6 +117,7 @@ class Compare extends React.Component {
                 removeFriend={this.removeFriend}
                 selectFriend={this.selectFriend}/>
             : <StatsComparer
+              close={this.close}
               stats={stats}
               friendStats={friendStats}
               getStats={this.getStats}/>}

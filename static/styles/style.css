@@ -223,7 +223,65 @@ body {
 
 /*stats*/
 
+.stats {
+  position: relative;
+  max-width: 80%;
+  margin: 3rem auto;
+  padding: 4rem 1rem;
+  background-color: white;
+  box-shadow: 4px 0 white, -4px 0 white, 0 -4px white, 0 4px white,
+    8px 0 #934b29, -8px 0 #934b29, 0 -8px #934b29, 0 8px #934b29,
+    0 0 0 4px #934b29;
+}
+
+.stats__close {
+  font-size: 200%;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+}
+
 .stats__container {
   display: flex;
   justify-content: space-around;
+}
+
+.stats__title {
+  font-weight: bold;
+  font-size: 150%;
+  margin-top: 2rem;
+}
+
+.stats__bar {
+  height: 30px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 0px 10px;
+  font-size: 16px;
+}
+
+.stats__bar--small-font {
+  font-size: 70%;
+}
+
+.stats__col--big {
+  flex: 0 0 40%;
+  display: flex;
+}
+
+.stats__col--small {
+  flex: 0 0 20%;
+  display: flex;
+  justify-content: center;
+}
+
+.stats__col--right {
+  justify-content: flex-end;
+}
+
+.stats__col--left {
+  justify-content: flex-start;
 }
