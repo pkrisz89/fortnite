@@ -96,7 +96,6 @@ class Compare extends React.Component {
   render() {
     const {username, platform, friends, stats, friendStats} = this.state;
     const showFriendsList = this.state.view === 'friends';
-    console.log(this.state.view);
 
     return (
       <Loader loading={this.state.loading}>

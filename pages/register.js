@@ -43,7 +43,6 @@ class Register extends React.Component {
       platform
     };
     return registrationService(payload).then(res => {
-      AuthenticationService.setToken({token: res.token, expires: res.expiry});
       Router.replace("/");
     }).catch(() => {
       this.setState({error: true});

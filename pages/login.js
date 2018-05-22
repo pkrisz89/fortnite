@@ -1,4 +1,5 @@
 import Router from "next/router";
+import cookies from 'next-cookies';
 import Nav from "../components/nav";
 import Head from "../components/head";
 import Error from "../components/error";

@@ -17,7 +17,7 @@ const StatsComparer = ({stats, friendStats, getStats}) => {
                     <p>
                         {getStats("stats", "Score")}</p>
                 </div>
-
+                <div></div>
                 <div>
                     <p>Name</p>
                     <p>Matches played</p>

@@ -2,8 +2,8 @@ import Router from "next/router";
 import AuthenticationService from "../services/authenticationService";
 
 const Logout = () => {
-  AuthenticationService.removeToken();
-  Router.replace("/");
+  AuthenticationService.logout();
+  Router.replace("/login");
   return null;
 };
 

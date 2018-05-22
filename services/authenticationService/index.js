@@ -1,56 +1,32 @@
 import axios from "axios";
 import axiosCookieJarSupport from "@3846masa/axios-cookiejar-support";
-import { CookieJar } from "tough-cookie";
+import {CookieJar} from "tough-cookie";
 
 axiosCookieJarSupport(axios);
 const cookieJar = new CookieJar();
 
 class AuthenticationService {
-  constructor() {
-    this.authenticate = this.authenticate.bind(this);
-    this.setToken = this.setToken.bind(this);
-    this.getToken = this.getToken.bind(this);
-    this.removeToken = this.removeToken.bind(this);
-    this.isExpired = this.isExpired.bind(this);
-
-    this.token = null;
-  }
-
   authenticate(payload) {
     const uri = "http://localhost:3001/login";
-    return axios
-      .post(uri, payload, { jar: cookieJar, withCredentials: true })
-      .then((res, ...rest) => {
-        this.setToken({
-          userId: res.data.userId
-        });
-      });
+    return axios.post(uri, payload, {
+      jar: cookieJar,
+      withCredentials: true
+    })
   }
 
   isAuthenticated() {
-    const token = this.getToken();
-    return token ? !this.isExpired(token.expiry) : false;
+    return Boolean(document.cookie);
   }
 
-  setToken(token) {
-    // localStorage.setItem("AuthToken", JSON.stringify(token));
-    this.token = token;
+  logout() {
+    document.cookie = 'user_sid=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+    const uri = "http://localhost:3001/logout";
+    return axios.post(uri, {
+      jar: cookieJar,
+      withCredentials: true
+    })
   }
 
-  getToken() {
-    // return JSON.parse(localStorage.getItem("AuthToken"));
-    return this.token;
-  }
-
-  removeToken() {
-    this.token = null;
-    // localStorage.removeItem("AuthToken");
-  }
-
-  isExpired(expiry) {
-    const current_time = new Date().getTime() / 1000;
-    return current_time > expiry ? true : false;
-  }
 }
 
 export default new AuthenticationService();
