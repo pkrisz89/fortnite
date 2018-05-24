@@ -127,6 +127,9 @@ class Compare extends React.Component {
               stats={stats}
               friendStats={friendStats}
               getStats={this.getStats}/>}
+          <a
+            href="https://twitter.com/messages/compose?recipient_id=&ref_src=twsrc%5Etfw"
+            className="contact">Created by @KPintr</a>
           <Error show={this.state.error}>This player has not played any game yet.</Error>
         </React.Fragment>
       </Loader>

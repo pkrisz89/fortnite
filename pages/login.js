@@ -89,6 +89,9 @@ class Login extends React.Component {
           </button>
           <Error show={error}>An error has occurred</Error>
         </div>
+        <a
+          href="https://twitter.com/messages/compose?recipient_id=&ref_src=twsrc%5Etfw"
+          className="contact">Created by @KPintr</a>
       </React.Fragment>
     );
   }

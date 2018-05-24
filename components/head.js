@@ -1,14 +1,14 @@
 import NextHead from 'next/head'
 import {string} from 'prop-types'
 
-const defaultDescription = ''
+const defaultDescription = 'Forninte stats. Compare your stats with your friends to decide who is better.'
 const defaultOGURL = ''
 const defaultOGImage = ''
 
 const Head = (props) => (
   <NextHead>
     <meta charset="UTF-8"/>
-    <title>{props.title || ''}</title>
+    <title>{props.title || 'Who is better in Fortnite?'}</title>
     <meta name="description" content={props.description || defaultDescription}/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link rel="icon" sizes="192x192" href="/static/touch-icon.png"/>

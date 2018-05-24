@@ -113,6 +113,9 @@ class Register extends React.Component {
             disabled={!username || !email || !password}>Register</button>
           <Error show={error}>An error has occured</Error>
         </div>
+        <a
+          href="https://twitter.com/messages/compose?recipient_id=&ref_src=twsrc%5Etfw"
+          className="contact">Created by @KPintr</a>
       </React.Fragment>
     );
   }
