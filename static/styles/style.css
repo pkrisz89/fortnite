@@ -3,7 +3,32 @@ body {
   font-family: "Press Start 2P";
   color: #221f16;
   font-size: 16px;
-  background-color: #d59843;
+
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  background: -webkit-linear-gradient(
+    -90deg,
+    rgba(213, 152, 67, 1) 0,
+    rgba(252, 253, 255, 1) 70%,
+    rgba(252, 253, 255, 1) 100%
+  );
+  background: -moz-linear-gradient(
+    180deg,
+    rgba(213, 152, 67, 1) 0,
+    rgba(252, 253, 255, 1) 70%,
+    rgba(252, 253, 255, 1) 100%
+  );
+  background: linear-gradient(
+    180deg,
+    rgba(213, 152, 67, 1) 0,
+    rgba(252, 253, 255, 1) 70%,
+    rgba(252, 253, 255, 1) 100%
+  );
+  background-repeat: no-repeat;
+  background-size: auto;
 }
 
 .error {
@@ -249,8 +274,20 @@ body {
 
 .stats__title {
   font-weight: bold;
-  font-size: 150%;
+  font-size: 180%;
   margin-top: 2rem;
+
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  padding: 10px;
+  overflow: hidden;
+  border: none;
+  color: rgba(255, 255, 0, 1);
+  text-align: center;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  text-shadow: 5px 5px 0 rgba(255, 0, 0, 1);
 }
 
 .stats__bar {

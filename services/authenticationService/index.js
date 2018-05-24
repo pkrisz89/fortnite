@@ -15,7 +15,7 @@ class AuthenticationService {
   }
 
   isAuthenticated() {
-    return Boolean(document.cookie);
+    return Boolean(document.cookie.indexOf('user_sid') >= 0);
   }
 
   logout() {

@@ -10,6 +10,7 @@ import AddFriends from '../components/addFriends';
 import StatsComparer from '../components/statsComparer';
 
 class Compare extends React.Component {
+
   constructor(props) {
     super(props);
 
@@ -20,7 +21,8 @@ class Compare extends React.Component {
       chosenFriend: undefined,
       username: "",
       platform: "pc",
-      view: "friends"
+      view: "friends",
+      loading: true
     };
 
     this.handleChange = this
@@ -43,21 +45,18 @@ class Compare extends React.Component {
       .bind(this)
   }
 
-  componentWillMount() {
-    this.setState({loading: true});
-    return Promise.all([
-      getStatsForSelf(), FriendsService.getFriends()
-    ]).then(([stats, friends]) => {
-      this.setState({friends: friends.friends, stats, loading: false});
-    }).catch(err => {
-      console.log(err);
-      this.setState({loading: false});
-    });
-  }
-
   componentDidMount() {
     if (!AuthenticationService.isAuthenticated()) {
       Router.replace("/login");
+    } else {
+      this.setState({loading: true});
+      return Promise.all([
+        getStatsForSelf(), FriendsService.getFriends()
+      ]).then(([stats, friends]) => {
+        this.setState({friends: friends.friends, stats, loading: false});
+      }).catch(err => {
+        this.setState({loading: false});
+      });
     }
   }
 
