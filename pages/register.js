@@ -24,12 +24,9 @@ class Register extends React.Component {
       .bind(this);
   }
 
-  componentWillMount() {
+  componentDidMount() {
     if (AuthenticationService.isAuthenticated()) {
-      this
-        .props
-        .url
-        .replace("/");
+      Router.replace("/");
     }
   }
 
@@ -42,7 +39,7 @@ class Register extends React.Component {
       email,
       platform
     };
-    return registrationService(payload).then(res => {
+    return registrationService(payload).then(() => {
       Router.replace("/");
     }).catch(() => {
       this.setState({error: true});

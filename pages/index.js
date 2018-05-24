@@ -6,6 +6,7 @@ import {getStatsForSelf, getStatsForUser} from "../services/statsService";
 import FriendsService from "../services/friendsService";
 import FriendsList from '../components/friendsList'
 import Loader from '../components/loader';
+import Error from '../components/error';
 import AddFriends from '../components/addFriends';
 import StatsComparer from '../components/statsComparer';
 
@@ -22,7 +23,8 @@ class Compare extends React.Component {
       username: "",
       platform: "pc",
       view: "friends",
-      loading: true
+      loading: true,
+      error: false
     };
 
     this.handleChange = this
@@ -89,9 +91,14 @@ class Compare extends React.Component {
   }
 
   selectFriend(id) {
-    this.setState({loading: true});
+    this.setState({loading: true, error: false});
     return getStatsForUser(id).then(res => {
-      this.setState({friendStats: res, loading: false, view: 'compare'});
+      if (res.response.error) {
+        this.setState({error: true, loading: false})
+      } else {
+        this.setState({friendStats: res, loading: false, view: 'compare', error: false});
+      }
+
     });
   }
 
@@ -120,6 +127,7 @@ class Compare extends React.Component {
               stats={stats}
               friendStats={friendStats}
               getStats={this.getStats}/>}
+          <Error show={this.state.error}>This player has not played any game yet.</Error>
         </React.Fragment>
       </Loader>
     );
