@@ -1,5 +1,4 @@
 import Router from "next/router";
-import cookies from 'next-cookies';
 import Nav from "../components/nav";
 import Head from "../components/head";
 import Error from "../components/error";
@@ -30,12 +29,12 @@ class Login extends React.Component {
   }
 
   handleChange(e) {
-    const {name, value} = e.target;
-    this.setState({[name]: value});
+    const { name, value } = e.target;
+    this.setState({ [name]: value });
   }
 
   login() {
-    this.setState({error: false});
+    this.setState({ error: false });
     const payload = {
       password: this.state.password,
       email: this.state.email
@@ -46,19 +45,19 @@ class Login extends React.Component {
         Router.replace("/");
       })
       .catch(err => {
-        this.setState({error: true});
+        this.setState({ error: true });
       });
   }
 
   render() {
-    const {email, password, error} = this.state;
+    const { email, password, error } = this.state;
 
     return (
       <React.Fragment>
-        <Nav/>
+        <Nav />
         <div className="form__container">
           <h1 className="form__header">Login</h1>
-          <img className="form__image" src='./static/images/trap.png' alt=""/>
+          <img className="form__image" src='./static/images/trap.png' alt="" />
           <div className="form__fieldset">
             <label className="form__label" htmlFor="email">
               Email
@@ -68,7 +67,7 @@ class Login extends React.Component {
               type="text"
               name="email"
               value={email}
-              onChange={this.handleChange}/>
+              onChange={this.handleChange} />
           </div>
           <div className="form__fieldset">
             <label className="form__label" htmlFor="password">
@@ -79,7 +78,7 @@ class Login extends React.Component {
               name="password"
               className="form__input"
               value={password}
-              onChange={this.handleChange}/>
+              onChange={this.handleChange} />
           </div>
           <button
             className="form__button"
