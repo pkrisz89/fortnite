@@ -7,7 +7,7 @@ const cookieJar = new CookieJar();
 
 class FriendsService {
   constructor() {
-    this.baseUrl = "http://localhost:3001/";
+    this.baseUrl = "localhost:8081/";
     this.getFriends = this
       .getFriends
       .bind(this);

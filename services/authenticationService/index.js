@@ -7,7 +7,7 @@ const cookieJar = new CookieJar();
 
 class AuthenticationService {
   authenticate(payload) {
-    const uri = "http://localhost:3001/login";
+    const uri = "localhost:8081/login";
     return axios.post(uri, payload, {
       jar: cookieJar,
       withCredentials: true
@@ -20,7 +20,7 @@ class AuthenticationService {
 
   logout() {
     document.cookie = 'user_sid=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
-    const uri = "http://localhost:3001/logout";
+    const uri = "localhost:8081/logout";
     return axios.post(uri, {
       jar: cookieJar,
       withCredentials: true

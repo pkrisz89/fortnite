@@ -7,7 +7,7 @@ const cookieJar = new CookieJar();
 
 const registerUser = payload => {
   document.cookie = 'user_sid=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
-  const uri = "http://localhost:3001/register";
+  const uri = "localhost:8081/register";
   return axios
     .post(uri, payload, {
     jar: cookieJar,

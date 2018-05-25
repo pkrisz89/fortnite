@@ -6,7 +6,7 @@ axiosCookieJarSupport(axios);
 const cookieJar = new CookieJar();
 
 const getStatsForUser = userId => {
-  const url = `http://localhost:3001/stats/${userId}`;
+  const url = `localhost:8081/stats/${userId}`;
 
   return axios
     .get(url, {
@@ -19,7 +19,7 @@ const getStatsForUser = userId => {
 };
 
 const getStatsForSelf = () => {
-  const url = `http://localhost:3001/mystats`;
+  const url = `localhost:8081/mystats`;
   return axios
     .get(url, {
     jar: cookieJar,
